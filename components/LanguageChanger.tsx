@@ -37,7 +37,7 @@ export default function LanguageChanger() {
   };
 
   return (
-    <div className="justify-center items-center flex flex-col text-light-teal gap-4">
+    <div className="justify-center items-start flex flex-col text-light-teal gap-4">
       <text>{t("language")}:</text>
       <select
         className="bg-light-green rounded p-2 px-4 cursor-pointer"
@@ -45,9 +45,9 @@ export default function LanguageChanger() {
         value={currentLocale}
       >
         <option value="en">English</option>
-        <option value="zh-CN">Chinese</option>
+        <option value="zh-CN">Chinese Simplified</option>
         <option value="fr">French</option>
-        <option value="zh-HANT">Chinese</option>
+        <option value="zh-HANT">Chinese Traditional</option>
       </select>
     </div>
   );
