@@ -40,6 +40,10 @@ export default async function RootLayout({
     <html lang={locale}>
       <head>
         <link rel="manifest" href="/manifest.json" />
+        <meta
+          name="google-adsense-account"
+          content="ca-pub-3575797160018144"
+        ></meta>
       </head>
       <ThemeRegistry>
         <body className="bg-light-teal">
