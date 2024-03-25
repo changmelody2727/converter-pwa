@@ -59,10 +59,12 @@ export default function SpiralWords() {
           <span
             key={index}
             className="character text-[1rem] md:text-[3rem] sm:text-[2rem] lg:text-[4rem]"
-            style={{
-              "--angle": `${(index * 360) / characters.length}deg`,
-              animationDelay: `-${index * (ANIMATION_DURATION / 16) - 0}ms`,
-            }}
+            style={
+              {
+                "--angle": `${(index * 360) / characters.length}deg`,
+                animationDelay: `-${index * (ANIMATION_DURATION / 16) - 0}ms`,
+              } as React.CSSProperties
+            }
           >
             {char}
           </span>
@@ -78,10 +80,14 @@ export default function SpiralWords() {
           <span
             key={index}
             className="character text-[1rem] md:text-[3rem] sm:text-[2rem] lg:text-[4rem]"
-            style={{
-              "--angle": `${(index * 360) / characters.length}deg`,
-              animationDelay: `-${index * (ANIMATION_DURATION / 16) + 2000}ms`,
-            }}
+            style={
+              {
+                "--angle": `${(index * 360) / characters.length}deg`,
+                animationDelay: `-${
+                  index * (ANIMATION_DURATION / 16) + 2000
+                }ms`,
+              } as React.CSSProperties
+            }
           >
             {char}
           </span>
