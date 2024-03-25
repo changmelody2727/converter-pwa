@@ -46,7 +46,7 @@ export default async function RootLayout({
         ></meta>
       </head>
       <ThemeRegistry>
-        <body className="bg-light-teal">
+        <body className="bg-light-teal flex flex-col flex-1 h-screen">
           <TranslationProvider
             locale={locale}
             resources={resources}

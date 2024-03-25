@@ -31,3 +31,38 @@ body {
     text-wrap: balance;
   }
 }
+
+.spiral {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  position: absolute;
+  left: 25%;
+  right: 25%;
+  margin: auto;
+  top: 50%;
+}
+
+@property --angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+@keyframes spiral {
+  0% {
+    --angle: 0deg;
+  }
+  100% {
+    --angle: 360deg;
+  }
+}
+
+.character {
+  color: #40514e;
+  font-size: 4rem;
+  transform: translateY(calc(sin(var(--angle)) * -100px))
+    scale(calc(cos(var(--angle)) * 0.5 + 0.5));
+  animation: spiral 5s linear infinite;
+}
