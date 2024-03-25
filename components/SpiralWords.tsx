@@ -13,23 +13,23 @@ export default function SpiralWords() {
   const [scaleFactor, setScaleFactor] = useState(1);
   console.log("🚀 ~ SpiralWords ~ scaleFactor:", scaleFactor);
 
-  useEffect(() => {
-    const handleResize = () => {
-      // Adjust the scale factor based on window width
-      const width = window.innerWidth;
-      // You can adjust the scaling factor according to your needs
-      const newScaleFactor = width > 768 ? 1 : width / 768; // Example: shrink when width is less than 768px
-      setScaleFactor(newScaleFactor);
-    };
+  //   useEffect(() => {
+  //     const handleResize = () => {
+  //       // Adjust the scale factor based on window width
+  //       const width = window.innerWidth;
+  //       // You can adjust the scaling factor according to your needs
+  //       const newScaleFactor = width > 768 ? 1 : width / 768; // Example: shrink when width is less than 768px
+  //       setScaleFactor(newScaleFactor);
+  //     };
 
-    // Add event listener for window resize
-    window.addEventListener("resize", handleResize);
+  //     // Add event listener for window resize
+  //     window.addEventListener("resize", handleResize);
 
-    // Cleanup function
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
+  //     // Cleanup function
+  //     return () => {
+  //       window.removeEventListener("resize", handleResize);
+  //     };
+  //   }, []);
 
   if (isHovered || isMobile) {
     return (
@@ -54,11 +54,11 @@ export default function SpiralWords() {
 
   return (
     <>
-      <div className={`spiral`} style={{ transform: `scale(${scaleFactor})` }}>
+      <div className={`spiral`}>
         {characters.map((char, index) => (
           <span
             key={index}
-            className="character"
+            className="character text-[1rem] md:text-[3rem] sm:text-[2rem] lg:text-[4rem]"
             style={{
               "--angle": `${(index * 360) / characters.length}deg`,
               animationDelay: `-${index * (ANIMATION_DURATION / 16) - 0}ms`,
@@ -77,7 +77,7 @@ export default function SpiralWords() {
         {characters.map((char, index) => (
           <span
             key={index}
-            className="character"
+            className="character text-[1rem] md:text-[3rem] sm:text-[2rem] lg:text-[4rem]"
             style={{
               "--angle": `${(index * 360) / characters.length}deg`,
               animationDelay: `-${index * (ANIMATION_DURATION / 16) + 2000}ms`,
